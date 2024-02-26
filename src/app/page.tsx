@@ -1,5 +1,5 @@
 import { Hero } from '@/components/sections'
-import { GridLineBackground, GridPointBackground } from '@/components/ui'
+import { GridPointBackground } from '@/components/ui'
 
 export default function Home() {
   return (
