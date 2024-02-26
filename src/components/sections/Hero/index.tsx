@@ -1,15 +1,15 @@
 import Image from 'next/image'
 import { TypewritingHero } from './Typewriting'
-import { CardBody, CardContainer, CardItem } from '@/components/ui'
+import { CardBody, CardContainer, CardItem, ModeToggle } from '@/components/ui'
 
 export function Hero() {
   return (
     <div className="flex flex-col flex-1">
       <CardContainer className="inter-var">
-        <CardBody className="relative group/card  w-auto sm:w-[30rem] h-auto rounded-xl p-6">
+        <CardBody className="bg-foreground/5 relative group/card  w-auto sm:w-[30rem] h-auto rounded-xl p-6">
           <CardItem
             translateZ="50"
-            className="text-xl font-bold text-neutral-600 dark:text-white "
+            className="text-xl font-bold text-neutral-600 dark:text-white flex w-full"
           >
             <div className="flex gap-4 items-center flex-1">
               <Image
@@ -19,11 +19,14 @@ export function Hero() {
                 width={200}
                 height={200}
               />
-              <div className="flex flex-col">
-                <h2 className="font-bold text-lg">Daniel Pôrto Núñez</h2>
-                <span className="text-primary font-normal opacity-45">
-                  @dpnunez
-                </span>
+              <div className="flex justify-between flex-1">
+                <div className="flex flex-col">
+                  <h2 className="font-bold text-lg">Daniel Pôrto Núñez</h2>
+                  <span className="text-primary font-normal opacity-45">
+                    @dpnunez
+                  </span>
+                </div>
+                <ModeToggle />
               </div>
             </div>
           </CardItem>
@@ -34,7 +37,7 @@ export function Hero() {
             Me.json
           </CardItem>
           <CardItem translateZ={100} className="w-full mt-4">
-            <div className="p-4 bg-foreground/5 rounded-xl group-hover/card:shadow-xl transition-all">
+            <div className="ring-1 ring-orange-400/20 p-4 bg-foreground/5 rounded-xl group-hover/card:shadow-xl transition-all">
               <TypewritingHero />
             </div>
           </CardItem>

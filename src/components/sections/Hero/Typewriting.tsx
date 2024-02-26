@@ -102,11 +102,45 @@ const ChangeRole = ({ onComplete, trigger }: ChangeRoleProps) => {
           words={[
             {
               text: '"Frontend Developer",',
-              className: cn(textClasses, 'text-orange-500 font-medium'),
+              className: cn(
+                textClasses,
+                'text-orange-500 dark:text-orange-400 font-medium',
+              ),
             },
             {
-              text: '"UI/UX Designer",',
-              className: cn(textClasses, 'text-orange-500 font-medium'),
+              text: '"Computer Science Student",',
+              className: cn(
+                textClasses,
+                'text-orange-500 dark:text-orange-400 font-medium',
+              ),
+            },
+            {
+              text: '"UI/UX enthusiast",',
+              className: cn(
+                textClasses,
+                'text-orange-500 dark:text-orange-400 font-medium',
+              ),
+            },
+            {
+              text: '"CS:GO player",',
+              className: cn(
+                textClasses,
+                'text-red-500 dark:text-orange-400 font-medium',
+              ),
+            },
+            {
+              text: '"CS2 Hater",',
+              className: cn(
+                textClasses,
+                'text-red-500 dark:text-red-400 font-medium',
+              ),
+            },
+            {
+              text: '"CSS Expert! CSS Expert! CSS Expert! "',
+              className: cn(
+                textClasses,
+                'text-orange-500 dark:text-orange-400 font-medium',
+              ),
             },
           ]}
         />
@@ -136,7 +170,7 @@ const lines: LineItem[] = [
       { text: ':', className: 'text-white, mr-2' },
       {
         text: '"Daniel Pôrto Núñez"',
-        className: 'text-orange-500 font-medium',
+        className: 'text-orange-500 dark:text-orange-400 font-medium',
       },
       { text: ',' },
     ],
@@ -147,7 +181,7 @@ const lines: LineItem[] = [
       { text: ':', className: 'text-white, mr-2' },
       {
         text: '"Brazil 🇧🇷, Pelotas"',
-        className: 'text-orange-500 font-medium',
+        className: 'text-orange-500 dark:text-orange-400 font-medium',
       },
       { text: ',' },
     ],
@@ -313,7 +347,7 @@ const socialsLinks = [
       <GitHubLogoIcon
         width={42}
         height={42}
-        className="text-gray-600 dark:text-white"
+        className="text-gray-600 dark:text-gray-200"
       />
     ),
     url: 'https://google.com',
