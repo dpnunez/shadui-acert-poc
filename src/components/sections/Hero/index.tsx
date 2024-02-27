@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <div className="flex flex-col flex-1">
       <CardContainer className="inter-var max-w-full">
-        <CardBody className="ring-1 ring-gray-500/30 relative group/card  w-[30rem] max-w-full h-auto rounded-xl md:p-6 p-3 ">
+        <CardBody className="ring-1 ring-gray-500/30 relative group/card  w-[30rem] max-w-full h-auto rounded-xl md:p-6 p-3 backdrop-blur-sm">
           <CardItem
             translateZ={20}
             className="text-xl font-bold text-neutral-600 dark:text-white flex w-full"
