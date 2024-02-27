@@ -5,10 +5,10 @@ import { CardBody, CardContainer, CardItem, ModeToggle } from '@/components/ui'
 export function Hero() {
   return (
     <div className="flex flex-col flex-1">
-      <CardContainer className="inter-var">
-        <CardBody className="bg-foreground/5 relative group/card  w-auto sm:w-[30rem] h-auto rounded-xl p-6">
+      <CardContainer className="inter-var max-w-full">
+        <CardBody className="ring-1 ring-gray-500/30 relative group/card  w-[30rem] max-w-full h-auto rounded-xl md:p-6 p-3 ">
           <CardItem
-            translateZ="50"
+            translateZ={20}
             className="text-xl font-bold text-neutral-600 dark:text-white flex w-full"
           >
             <div className="flex gap-4 items-center flex-1">
@@ -31,13 +31,13 @@ export function Hero() {
             </div>
           </CardItem>
           <CardItem
-            translateZ={160}
+            translateZ={100}
             className="mt-6 bg-orange-500 text-white  rounded-md px-2 py-1 font-mono text-sm ml-auto group-hover/card:shadow-xl transition-all"
           >
-            Me.json
+            me.json
           </CardItem>
-          <CardItem translateZ={100} className="w-full mt-4">
-            <div className="ring-1 ring-orange-400/20 p-4 bg-foreground/5 rounded-xl group-hover/card:shadow-xl transition-all">
+          <CardItem translateZ={50} className="w-full mt-4">
+            <div className="group-hover/card:ring-1 ring-orange-400/20 p-2 md:p-4 bg-foreground/[0.03] rounded-xl group-hover/card:shadow-xl transition-all">
               <TypewritingHero />
             </div>
           </CardItem>

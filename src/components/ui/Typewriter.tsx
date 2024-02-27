@@ -103,7 +103,7 @@ export const TypewriterEffectSmooth = ({
   cursorClassName,
   duration: externalDuration,
   onComplete,
-  delay = 1,
+  delay = 0.5,
 }: {
   words: {
     text: string
@@ -115,7 +115,6 @@ export const TypewriterEffectSmooth = ({
   onComplete?: () => void
   delay?: number
 }) => {
-  console.log(words)
   const naturalDuration = words.map((e) => e.text).join(' ').length / 30
   const duration = externalDuration || naturalDuration
   // split text inside of words into array of characters

@@ -5,7 +5,7 @@ import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
-const textClasses = 'text-xl text-gray-500 my-0'
+const textClasses = 'text-lg md:text-xl text-gray-500 my-0'
 
 export function TypewritingHero() {
   return (
@@ -178,18 +178,58 @@ const lines: LineItem[] = [
   {
     words: [
       { text: '"location"', className: 'text-gray-500' },
+      {
+        text: ':',
+      },
+      {
+        text: '{',
+        className: 'text-orange-700',
+      },
+    ],
+  },
+  {
+    arr: [
+      {
+        words: [
+          { text: '"country"', className: 'text-gray-500' },
+          { text: ':', className: 'text-white, mr-2' },
+          {
+            text: '"Brazil"',
+            className: 'text-orange-500 dark:text-orange-400 font-medium',
+          },
+          { text: ',' },
+        ],
+      },
+      {
+        words: [
+          { text: '"city"', className: 'text-gray-500' },
+          { text: ':', className: 'text-white, mr-2' },
+          {
+            text: '"Pelotas"',
+            className: 'text-orange-500 dark:text-orange-400 font-medium',
+          },
+          { text: ',' },
+        ],
+      },
+    ],
+  },
+  {
+    words: [{ text: '}', className: 'text-orange-700' }, { text: ',' }],
+  },
+  {
+    Component: ChangeRole,
+  },
+  {
+    words: [
+      { text: '"university"', className: 'text-gray-500' },
       { text: ':', className: 'text-white, mr-2' },
       {
-        text: '"Brazil 🇧🇷, Pelotas"',
+        text: '"UFPel - CC"',
         className: 'text-orange-500 dark:text-orange-400 font-medium',
       },
       { text: ',' },
     ],
   },
-  {
-    Component: ChangeRole,
-  },
-
   {
     words: [
       { text: '"socials"', className: 'text-gray-500' },
@@ -230,7 +270,7 @@ function JSONWriter({ lines, onComplete }: JSONWriterProps) {
     if (line.Component) {
       const Component = line.Component
       return (
-        <LineWrapper key={idx} className="ml-8">
+        <LineWrapper key={idx} className="md:ml-8 ml-4">
           <Component
             trigger={lineWriting >= lines.length}
             onComplete={() => {
@@ -244,7 +284,7 @@ function JSONWriter({ lines, onComplete }: JSONWriterProps) {
 
     if (line.arr) {
       return (
-        <LineWrapper key={idx} className="ml-8">
+        <LineWrapper key={idx} className="md:ml-8 ml-4">
           <JSONWriter
             lines={line.arr}
             onComplete={() => {
@@ -265,9 +305,9 @@ function JSONWriter({ lines, onComplete }: JSONWriterProps) {
                 if (isLast && onComplete) {
                   onComplete()
                 }
-              }, 500)
+              }, 100)
             }}
-            className="ml-8"
+            className="md:ml-8 ml-4"
             key={idx}
             words={line.words.map((e) => ({
               ...e,
@@ -350,7 +390,7 @@ const socialsLinks = [
         className="text-gray-600 dark:text-gray-200"
       />
     ),
-    url: 'https://google.com',
+    url: 'https://github.com/dpnunez',
   },
 ]
 
@@ -366,18 +406,23 @@ function Socials({ onComplete }: { onComplete: () => void }) {
             key={idx}
             initial={{
               opacity: 0,
-              transform: 'translateZ(200px)',
+              translateZ: 200,
+              rotate: -15,
+              x: -40,
             }}
             animate={{
               opacity: 1,
+              scale: 1,
+              x: 0,
+              rotate: 0,
+              transition: {
+                delay: idx * 0.3,
+              },
             }}
-            transition={{
-              delay: 0.5 * idx,
+            whileHover={{
+              scale: 1.1,
             }}
-            className={cn(
-              textClasses,
-              'flex cursor-pointer my-2 origin-right hover:scale-105',
-            )}
+            className={cn(textClasses, 'flex cursor-pointer my-2 origin-right')}
             onAnimationComplete={() => {
               if (isLast) {
                 onComplete()
